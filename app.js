@@ -33,6 +33,8 @@ const { createApp } = Vue
       }
     },
     methods: {
+      
+      //creo la funzione che mi permette di pushare nell'array ciò che digito all'interno dell'input lato html
       pushFunction(){
         let newTask = {
           text: this.newElement,
@@ -43,10 +45,11 @@ const { createApp } = Vue
           this.newElement = '';
         }
       },
+
+      //creo la funzione che mi permette di rimuovere, al click dell'icona x, l'elemento dall'array
       removeFunction(index){
        let removedElement  = this.elementsList.splice(index, 1);
        this.elementsList = this.elementsList.filter(element => element !== removedElement)
-       console.log(removedElement);
       }
     }
   }).mount('#app')

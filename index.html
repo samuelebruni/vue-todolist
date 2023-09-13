@@ -22,12 +22,12 @@
         <div class="container d-flex justify-content-center mt-5">
             
             <ul class="bg-success p-5 shadow rounded-2 list-unstyled">
-
+                <!--ciclo tutti gli elementi presenti all'interno del mio array contenente i TODO, creando per ognuno di loro, un apposito <li>-->
                 <li class="border-top border-bottom border-dark p-2 text-white mb-3" v-for="(element, index) in elementsList">
                     
                     
                    <span class="d-flex align-items-baseline gap-4">
-
+                        <!--ho creato la classe 'text' nel css che al verificarsi della mia condizione si attiverà o meno in base al valore 'done' lato js, inoltre cliccando con il mouse su questo <div> se 'done' ha valore 'true', diventerà 'false' o viceversa-->
                         <div style="cursor: pointer;" :class="{text: element.done == true}" @click="element.done = !element.done">👉 {{element.text}} </div>
                         <div>
                             <i class="fa-solid fa-xmark d-flex justify-content-center" style="color: #f70000; cursor: pointer;" @click="removeFunction(index)"></i>
